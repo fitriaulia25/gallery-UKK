@@ -11,13 +11,16 @@ class AdminMiddleware
     /**
      * Handle an incoming request.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->check() && auth()->user()->role === 'admin') {
             return $next($request);
         }
-            abort(403, 'Unauthorized access - Admins only.');
-        }
+
+        abort(403, 'Unauthorized access - Admins only.');
+    }
 }

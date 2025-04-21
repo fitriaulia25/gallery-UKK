@@ -14,12 +14,11 @@ class RoleMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, $role)
     {
         if (!auth()->user() || !auth()->user()->hasRole($role)) {
             return redirect('/home')->with('error', 'You do not have access to this page.');
         }
 
         return $next($request);
-    }
-}
+    }}

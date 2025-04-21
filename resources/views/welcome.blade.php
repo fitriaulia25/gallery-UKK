@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery foto</title>
+    <title>Galeri Foto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         .gallery-img {
             transition: transform 0.3s ease-in-out;
@@ -63,6 +64,8 @@
     </style>
 </head>
 <body class="bg-light">
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold text-primary" href="#">Gallery</a>
@@ -81,6 +84,7 @@
         </div>
     </div>
 </nav>
+
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
     <div class="carousel-inner">
     <div class="carousel-item active" style="background: linear-gradient(135deg, #f78fb3, #74b9ff); height: 70vh;">
@@ -127,6 +131,7 @@
         </div>
     </div>
 </section>
+
 <section id="about" class="py-5 bg-light">
     <div class="container text-center">
         <h2 class="fw-bold mb-3">Tentang Galeri</h2>
@@ -137,9 +142,9 @@
 </section>
 
 <footer class="bg-dark text-white text-center py-4">
-    <p class="mb-0">2025 Galeri foto. All rights reserved.</p>
-    </footer>
+    <p class="mb-0">&copy; 2025 Galeri Foto. All rights reserved.</p>
+</footer>
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
