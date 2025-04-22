@@ -11,23 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('photos', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
             $table->text('description')->nullable();
             $table->string('image_path');
-            $table->string('file_path');   
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
-            $table->boolean('status')->default(true); 
-
+            $table->boolean('is_active')->default(true); 
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('photos');
+        Schema::dropIfExists('galleries');
     }
 };

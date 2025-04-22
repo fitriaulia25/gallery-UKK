@@ -35,7 +35,7 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('admin.dashboard')->with('success', 'User berhasil dihapus.');
+        return redirect()->route('admin.users.destroy')->with('success', 'User berhasil dihapus.');
     }
 
 

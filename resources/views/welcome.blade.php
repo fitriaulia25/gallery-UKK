@@ -87,7 +87,7 @@
 
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
     <div class="carousel-inner">
-    <div class="carousel-item active" style="background: linear-gradient(135deg, #f78fb3, #74b9ff); height: 70vh;">
+    <div class="carousel-item active" style="background: linear-gradient(135deg,rgb(255, 182, 227), #74b9ff); height: 70vh;">
             <div class="d-flex justify-content-center align-items-center h-100 text-center text-white">
                 <div>
                     <i class="bi bi-camera-fill display-1 mb-3"></i>

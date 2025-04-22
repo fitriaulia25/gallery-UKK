@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Fashion', 'Alam / Nature', 'Funny Pets', 'Beauty'];
+        $categories = ['Fashion', 'Alam / Nature', 'Funny Pets', 'gallery'];
     
         foreach ($categories as $cat) {
             Category::create(['name' => $cat]);

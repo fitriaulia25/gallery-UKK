@@ -114,19 +114,19 @@
 </div>
 <style>
     .text-gradient {
-    background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
+    background: linear-gradient(45deg, #a6c1ee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .btn-pink-purple {
-    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    background: linear-gradient(135deg, #a6c1ee);
     color: white;
     border: none;
 }
 
 .btn-pink-purple:hover {
-    background: linear-gradient(135deg, #e2b2f0, #91bdf2);
+    background: linear-gradient(135deg, #91bdf2);
     color: white;
 }
 

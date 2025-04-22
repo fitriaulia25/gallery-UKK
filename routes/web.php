@@ -108,6 +108,8 @@ Route::get('/gallery/search', [GalleryController::class, 'search'])->name('galle
 Route::post('/photos/{photo}/like', [GalleryController::class, 'like'])->name('photos.like');
 Route::get('/gallery/{photo}/edit', [GalleryController::class, 'edit'])->name('photos.edit');
 Route::put('/gallery/{photo}', [GalleryController::class, 'update'])->name('photos.update');
+Route::get('/photos/create', [GalleryController::class, 'create'])->name('photos.create');
+Route::post('/gallery', [GalleryController::class, 'store'])->name('gallery.store');
 
 
 

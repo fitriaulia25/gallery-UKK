@@ -40,11 +40,11 @@
 
 @if (!request()->routeIs('login') &&
      !request()->routeIs('register') &&
+     !request()->routeIs('home') &&
      !request()->routeIs('photos.create') &&
      !request()->routeIs('photos.edit'))
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
-        {{-- Logo / Brand --}}
         <a class="navbar-brand fw-bold text-primary" href="{{ route('dashboard') }}">Gallery</a>
 
         <ul class="navbar-nav ms-3">
@@ -59,7 +59,6 @@
                 </ul>
             </li>
         </ul>
-        {{-- Spacer biar dropdown user ke kanan --}}
         <div class="ms-auto">
             @auth
             <ul class="navbar-nav">

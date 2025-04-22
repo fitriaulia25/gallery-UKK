@@ -21,7 +21,7 @@ class CommentController extends Controller
         Comment::create([
             'user_id' => Auth::id(),
             'photo_id' => $photoId,
-            'content' => $request->input('content'), // Kolom di database bernama content
+            'content' => $request->input('content'), 
         ]);
 
         return redirect()->back()->with('success', 'Komentar berhasil ditambahkan!');

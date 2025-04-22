@@ -48,7 +48,6 @@ class PhotoController extends Controller
         return view('photos.index', compact('photos', 'activeCategory'));
     }
         
-    
 public function create()
 {
     $categories = Category::all();
@@ -56,29 +55,32 @@ public function create()
 }
 
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'title' => 'nullable|string|max:255',
-            'description' => 'nullable|string|max:500',
-            'category_id' => 'required|exists:categories,id',
-        ]);
-    
-        $imageName = time() . '.' . $request->image->extension();
-        $imagePath = 'photos/' . $imageName; 
-    
-        $request->image->storeAs('public/photos', $imageName);
-        Photo::create([
-            'user_id' => Auth::id(),
-            'image_path' => $imagePath,
-            'file_path' => $imagePath,
-            'title' => $request->title,
-            'description' => $request->description,
-            'category_id' => $request->category_id
-        ]);
-        return redirect()->route('user.dashboard')->with('success', 'Foto berhasil diunggah!');
-    }
+public function store(Request $request)
+{
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'title' => 'nullable|string|max:255',
+        'description' => 'nullable|string|max:500',
+        'category_id' => 'required|exists:categories,id',
+    ]);
+
+    $imageName = time() . '.' . $request->image->extension();
+    $imagePath = 'photos/' . $imageName;
+
+    $request->image->storeAs('public/photos', $imageName);
+
+    Photo::create([
+        'user_id' => Auth::id(),
+        'image_path' => $imagePath,
+        'file_path' => $imagePath,
+        'title' => $request->title,
+        'description' => $request->description,
+        'category_id' => $request->category_id,
+        'is_comment_enabled' => $request->has('is_comment_enabled'), 
+    ]);
+
+    return redirect()->route('user.dashboard')->with('success', 'Foto berhasil diunggah!');
+}
     
 
     public function show($id)
@@ -197,7 +199,6 @@ public function toggleStatus($id)
 
     return redirect()->route('admin.dashboard')->with('success', 'Status foto berhasil diperbarui.');
 }
-
 
 
 }

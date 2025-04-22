@@ -13,7 +13,6 @@
          
     @endisset
 
-    {{-- Form Pencarian --}}
     <div class="row justify-content-center mb-custom-search">
         <div class="col-md-10 col-lg-8">
             <form method="GET" action="{{ route('photos.index') }}">
@@ -34,7 +33,6 @@
         </div>
     </div>
 
-    {{-- Galeri Foto --}}
     @if($photos->isEmpty())
         <div class="alert alert-warning text-center">Belum ada foto yang ditemukan.</div>
     @else
@@ -68,7 +66,6 @@
             @endforeach
         </div>
 
-        {{-- Pagination --}}
         <div class="d-flex justify-content-center mt-4">
             {{ $photos->withQueryString()->links() }}
         </div>
@@ -131,14 +128,10 @@ document.addEventListener("DOMContentLoaded", function() {
     margin-left: 4px;
 }
 
-.text-gradient {
-    background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
 
 .btn-pink-purple {
-    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    background: linear-gradient(135deg,rgb(187, 250, 221),rgb(209, 223, 248));
     color: white;
     border: none;
 }

@@ -32,22 +32,21 @@
 
 <div class="main-content container">
     <div class="text-center mb-4 py-4 px-3 shadow-sm"
-         style="background: linear-gradient(135deg, #fcd5ce, #cdb4db); border-radius: 16px;">
+         style="background: linear-gradient(135deg,rgb(187, 219, 255)); border-radius: 16px;">
         <h3 class="fw-bold text-white mb-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
-            🎀📸 Galeri Foto 🦋
+            📸 Galeri Foto  
         </h3>
         <p class="text-white small mb-0" style="max-width: 600px; margin: auto; text-shadow: 1px 1px 1px rgba(0,0,0,0.1);">
-            Temukan momen manis dan indah dari pengguna lain. Yuk upload juga dan hiasi galeri dengan karyamu 🎨💖
+            Temukan momen manis dan indah dari pengguna lain. Yuk upload juga dan hiasi galeri dengan karyamu 🎨
         </p>
     </div>
     <div class="d-flex justify-content-center mb-5">
         <a href="{{ route('photos.create') }}" class="text-decoration-none">
             <div class="card shadow-sm border-0"
-                 style="width: 250px; background: linear-gradient(135deg, #ffd6e0, #d0e6ff); border-radius: 16px; transition: transform 0.3s ease;">
-                <div class="card-body text-center py-3 px-3">
-                    <i class="bi bi-plus-circle-fill" style="font-size: 1.8rem; color: #6a11cb;"></i>
-                    <h6 class="mt-2 fw-semibold text-dark mb-1">Tambah Foto Baru</h6>
-                    <p class="text-muted mb-0 small">Upload momen terbaikmu!</p>
+                 style="width: 200px; background: linear-gradient(135deg,rgb(170, 219, 248)); border-radius: 16px; transition: transform 0.3s ease;">
+                <div class="card-body text-center py-1 px-1">
+                    <i class="bi bi-plus-circle-fill" style="font-size: 1.8rem; color:rgb(255, 255, 255);"></i>
+                    <h6 class="mt-2 fw-semibold text-white mb-1">Tambah Foto Baru</h6>
                 </div>
             </div>
         </a>
