@@ -12,4 +12,10 @@ class KategoriController extends Controller
         return view('kategori.show', compact('data', 'nama'));
     }
     
+    public function index()
+{
+    $categories = Category::all(); // atau sesuai kebutuhan
+    return view('view', compact('categories'));
+}
+
 }

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use App\Models\Like;
 
-class photo extends Model
+class Photo extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'title',
         'description',
