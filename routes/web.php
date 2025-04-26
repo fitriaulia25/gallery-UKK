@@ -95,9 +95,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/photo/{id}/comment', [CommentController::class, 'store'])->name('comments.store');
     Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+    
 
 });
 
+Route::patch('/photos/{photo}/toggle-comment', [PhotoController::class, 'toggleComment'])->name('photos.toggle-comment');
 
 
 Route::resource('pengguna', PenggunaController::class)->middleware('auth', 'role:admin');

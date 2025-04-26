@@ -62,6 +62,8 @@ public function store(Request $request)
         'title' => 'nullable|string|max:255',
         'description' => 'nullable|string|max:500',
         'category_id' => 'required|exists:categories,id',
+        'is_comment_enabled' => 'nullable|boolean',
+
     ]);
 
     $imageName = time() . '.' . $request->image->extension();
@@ -140,6 +142,7 @@ public function edit($id)
     
     if ($photo->user_id !== auth()->id()) {
         return redirect()->route('dashboard')->with('error', 'Anda tidak memiliki izin untuk mengedit foto ini.');
+        
     }
 
     return view('photos.edit', compact('photo'));
@@ -153,6 +156,7 @@ public function update(Request $request, $id)
     $request->validate([
         'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         'description' => 'required|string|max:255',
+        'is_comment_enabled' => 'nullable|boolean',
     ]);
 
     if ($request->hasFile('photo')) {
@@ -163,11 +167,13 @@ public function update(Request $request, $id)
     }
 
     $photo->description = $request->description;
+    $photo->is_comment_enabled = $request->has('is_comment_enabled');
+
     $photo->save();
 
     return redirect()->route('profile.show', $photo->user_id)->with('success', 'Foto berhasil diperbarui!');
 }
-
+   
 public function profile(User $user)
 {
     $photos = Photo::where('user_id', $user->id)
@@ -191,14 +197,13 @@ public function byCategory($id)
     return view('photos.index', compact('photos', 'category'));
 }
 
-public function toggleStatus($id)
+public function toggleComment($id)
 {
     $photo = Photo::findOrFail($id);
-    $photo->status = !$photo->status; 
+    $photo->is_comment_enabled = !$photo->is_comment_enabled; // toggle 1 <=> 0
     $photo->save();
 
-    return redirect()->route('admin.dashboard')->with('success', 'Status foto berhasil diperbarui.');
+    return back()->with('success', 'Status komentar berhasil diperbarui.');
 }
-
 
 }

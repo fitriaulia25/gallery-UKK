@@ -30,6 +30,11 @@
                         <label class="form-label fw-bold">Deskripsi</label>
                         <input type="text" name="description" class="form-control" value="{{ $photo->description }}" required>
                     </div>
+                    <div class="mb-3 form-check">
+                <input type="hidden" name="is_comment_enabled" value="0">
+                <input type="checkbox" class="form-check-input" id="is_comment_enabled" name="is_comment_enabled" value="1" {{ old('is_comment_enabled', $photo->is_comment_enabled) ? 'checked' : '' }}>
+                <label class="form-check-label" for="is_comment_enabled">Aktifkan Komentar</label>
+            </div>
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                         <a href="{{ route('profile.show', Auth::user()->id) }}" class="btn btn-outline-secondary">Kembali ke Profil</a>

@@ -12,9 +12,22 @@
                 <i class="fas fa-user-circle text-primary fs-3"></i>
                 <span class="fw-semibold fs-5 ms-2">{{ $photo->user->name ?? 'Pengguna' }}</span>
             </div>
+
             @unless($photo->is_comment_enabled)
                 <div class="alert alert-warning mb-3">Komentar telah dimatikan untuk foto ini.</div>
             @endunless
+
+            {{-- Cek apakah foto ini diupload oleh pengguna yang sedang login --}}
+            @if(auth()->id() === $photo->user_id)
+                <form action="{{ route('photos.toggle-comment', $photo->id) }}" method="POST" class="mb-3">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn {{ $photo->is_comment_enabled ? 'btn-warning' : 'btn-success' }}">
+                        {{ $photo->is_comment_enabled ? 'Matikan Komentar' : 'Nyalakan Komentar' }}
+                    </button>
+                </form>
+            @endif
+
             <div class="d-flex align-items-center mb-3">
                 <form action="{{ route('photos.like', $photo->id) }}" method="POST">
                     @csrf

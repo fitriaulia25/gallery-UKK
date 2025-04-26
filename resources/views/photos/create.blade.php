@@ -52,11 +52,11 @@
                     </div>
                 </div>
 
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="is_comment_enabled" name="is_comment_enabled" value="1" checked>
-                    <label class="form-check-label fw-bold" for="is_comment_enabled">Nyalakan Komentar</label>
-                </div>
-
+                <div class="form-group mt-3">
+        <label for="is_comment_enabled">Aktifkan Komentar:</label><br>
+        <input type="checkbox" name="is_comment_enabled" id="is_comment_enabled" value="1">
+        <label for="is_comment_enabled">Ya</label>
+    </div>
                 <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-success">
                         <i class="bi bi-upload"></i> Upload
